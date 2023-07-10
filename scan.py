@@ -7,6 +7,7 @@ class Scan():
     def __init__(self):
         self.folder_photos = r"C:\Users\UA\PycharmProjects\BetterCallGoose\photos"
         self.folder_printed_photos = r"C:\Users\UA\PycharmProjects\BetterCallGoose\printed_photos"
+        self.for_print = fr"C:\Users\UA\PycharmProjects\BetterCallGoose\for_print"
 
     def scan_new_files(self):
         with os.scandir(self.folder_photos) as entries:
@@ -16,9 +17,26 @@ class Scan():
             ]
         return new_photos
 
-    def move_file(self, file):
-        current_file = os.path.join(self.folder_photos, file)
-        target_file = os.path.join(self.folder_printed_photos, file)
+    def scan_png(self):
+        with os.scandir(self.for_print) as entries:
+            new_photos = [
+                entry.name for entry in entries
+                if entry.is_file() and entry.name.endswith((".png"))
+            ]
+        return new_photos
+
+    def move_file(self, file, folder):
+
+        current_file = None
+        target_file = None
+
+        if folder == "photos": #photos -> printed_photos
+            current_file = os.path.join(self.folder_photos, file)
+            target_file = os.path.join(self.folder_printed_photos, file)
+
+        if folder == "for_print": #for_print -> printed_photos
+            current_file = os.path.join(self.for_print, file)
+            target_file = os.path.join(self.folder_printed_photos, file)
 
         try:
             shutil.move(current_file, target_file)
