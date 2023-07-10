@@ -4,10 +4,10 @@ from printer import print_file
 import os
 import time
 
-
-scanner = Scan()
-
 def main():
+    
+    scanner = Scan()
+    
     while True:
 
         value = scanner.scan_new_files()
