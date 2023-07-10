@@ -21,11 +21,11 @@ def place_photo(file, file_name):
 
         offset = (CENTERED_IMAGE)
         a4im.paste(im, offset)
-        a4im.save(fr"C:\Users\UA\PycharmProjects\BetterCallGoose\for_print\{file_name}", "PNG", quality=100)
-        print(f"File: {file} saved")
+        a4im.save(fr"for_print\{file_name}", "PNG", quality=100)
+        print(f"File: {file} converted to png-template")
 
     except PIL.UnidentifiedImageError:
         print(f"Error: Invalid image file: {file}")
 
     finally:
-        return fr"C:\Users\UA\PycharmProjects\BetterCallGoose\for_print\{file_name}"
+        return fr"for_print\{file_name}"
