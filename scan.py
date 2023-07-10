@@ -5,9 +5,9 @@ import shutil
 class Scan():
 
     def __init__(self):
-        self.folder_photos = r"C:\Users\UA\PycharmProjects\BetterCallGoose\photos"
-        self.folder_printed_photos = r"C:\Users\UA\PycharmProjects\BetterCallGoose\printed_photos"
-        self.for_print = fr"C:\Users\UA\PycharmProjects\BetterCallGoose\for_print"
+        self.folder_photos = r"photos"
+        self.folder_printed_photos = r"printed_photos"
+        self.for_print = fr"for_print"
 
     def scan_new_files(self):
         with os.scandir(self.folder_photos) as entries:
@@ -42,3 +42,4 @@ class Scan():
             shutil.move(current_file, target_file)
         except Exception as e:
             print(f"Error moving file: {e}")
+            
