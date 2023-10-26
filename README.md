@@ -15,5 +15,6 @@ In addiction, the folder with files should contain three folders named as:
 <br>"for_print", "photos", "printed_photos"
 <h4>3. Examples of use:</h4> 
 When using the code, pictures should be placed in <i>photos</i>, after which they will be sent as templates to <i>for_print</i>, and after automated printing sent to some "disposal" - <i>printed_photos</i>
-![Example of created template](https://github.com/Matterlinkk/print-putomation/assets/122081802/4660d7c4-0c36-4d27-a0d7-93e252e19fae)
+<br>
+<a href=https://github.com/Matterlinkk/print-putomation/assets/122081802/4660d7c4-0c36-4d27-a0d7-93e252e19fae>[Example of created template]</a>
 <br> After creating such a template, as soon as a file is detected, it goes straight to printing
